@@ -32,7 +32,7 @@ const createPost = async (req, res) => {
 const getPostByUserId = async (req, res) => {
   const userId = req.params.userId;
   try {
-    const posts = await Post.find({ author: userId }).populate('author');
+    const posts = await Post.find({ author: userId });
     res.json(posts);
   } catch (error) {
     console.log(error);
